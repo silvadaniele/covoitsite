@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @ride.owner %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @ride.origin %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @ride.destination %>
+</p>
+
+<p>
+  <strong>Departure at:</strong>
+  <%= @ride.departure_at %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @ride.capacity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @ride.price %>
+</p>
+
+<%= link_to 'Edit', edit_ride_path(@ride) %> |
+<%= link_to 'Back', rides_path %>
