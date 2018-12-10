@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :origin %>
-    <%= form.text_field :origin %>
+    <%= form.text_field :origin, required: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :destination %>
-    <%= form.text_field :destination %>
+    <%= form.text_field :destination, required: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :departure_at %>
-    <%= form.datetime_select :departure_at %>
+    <%= form.datetime_select :departure_at, required: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :capacity %>
-    <%= form.text_field :capacity %>
+    <%= form.text_field :capacity, required: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.number_field :price, required: true, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Ride", class: "btn btn-outline-primary" %>
   </div>
 <% end %>

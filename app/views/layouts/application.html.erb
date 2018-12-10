@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Covoatsite</title>
+    <title>Covoiturage Mariage Dani e Manu</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+    <% if notice.present? %>
+      <div class="alert alert-success text-center" role="alert">
+        <span><%= notice %></span>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert alert-danger text-center" role="alert">
+        <span><%= alert %></span>
+      </div>
+    <% end %>
+    <div class="container container-margin-top">
+      <%= yield %>
+    </div>
   </body>
 </html>
