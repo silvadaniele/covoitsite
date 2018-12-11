@@ -2,7 +2,7 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @ride.owner %>
+  <%= @ride.owner.email %>
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
   <strong>Departure at:</strong>
-  <%= @ride.departure_at %>
+  <%= @ride.departure_at.strftime("%d-%m-%Y") %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @ride.price %>
+  <%= number_to_currency(@ride.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %>
 </p>
 
 <%= link_to 'Edit', edit_ride_path(@ride) %> |

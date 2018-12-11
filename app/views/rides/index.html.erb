@@ -2,7 +2,7 @@
 
 <h1>Rides</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Owner</th>
@@ -15,21 +15,23 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @rides.each do |ride| %>
-      <tr>
-        <td><%= ride.owner %></td>
-        <td><%= ride.origin %></td>
-        <td><%= ride.destination %></td>
-        <td><%= ride.departure_at %></td>
-        <td><%= ride.capacity %></td>
-        <td><%= ride.price %></td>
-        <td><%= link_to 'Show', ride %></td>
-        <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
-        <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <div class="container">
+    <tbody>
+      <% @rides.each do |ride| %>
+        <tr>
+          <td><%= ride.owner.email %></td>
+          <td><%= ride.origin %></td>
+          <td><%= ride.destination %></td>
+          <td><%= ride.departure_at.strftime("%d-%m-%Y") %></td>
+          <td><%= ride.capacity %></td>
+          <td><%= number_to_currency(ride.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></td>
+          <td><%= link_to 'Show', ride %></td>
+          <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
+          <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </div>
 </table>
 
 <br>
