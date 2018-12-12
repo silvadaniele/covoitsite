@@ -3,7 +3,7 @@
 # Table name: rides
 #
 #  id           :bigint(8)        not null, primary key
-#  owner_id     :integer
+#  owner_id     :bigint(8)
 #  origin       :string
 #  destination  :string
 #  departure_at :datetime
