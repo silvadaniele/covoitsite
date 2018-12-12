@@ -1,7 +1,7 @@
 class CreateRides < ActiveRecord::Migration[5.2]
   def change
     create_table :rides do |t|
-      t.references :owner, foreign_key: true
+      t.references :owner, foreign_key: { to_table: :users }
       t.string :origin
       t.string :destination
       t.datetime :departure_at
