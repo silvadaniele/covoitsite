@@ -23,5 +23,7 @@
     <div class="container container-margin-top">
       <%= yield %>
     </div>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_KEY']}" %>
+    <%= javascript_include_tag 'rides', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
