@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
   <body>
     <%= render 'layouts/navbar' %>
@@ -24,6 +24,6 @@
       <%= yield %>
     </div>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_KEY']}" %>
-    <%= javascript_include_tag 'rides', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'rides' %>
   </body>
 </html>

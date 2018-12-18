@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('.datetimepicker').datetimepicker();
 });
 
 function initializeAutocomplete(cssClass) {
@@ -6,14 +7,15 @@ function initializeAutocomplete(cssClass) {
   if (elements.length > 0) {
     for (var i = 0 ; i <= elements.length ; i++) {
       var element = elements[i];
-      console.log(element);
       var autocomplete = new google.maps.places.Autocomplete(
         element,
         {
-          types: ['geocode']
+          types: ['(cities)'],
+          componentRestrictions: {
+            country: "fr"
+          }
         }
       );
-      console.log(autocomplete);
       // google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChange)
     }
   }
@@ -23,3 +25,5 @@ function initializeAutocomplete(cssClass) {
 google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('google-place-autocomplete');
 });
+
+
