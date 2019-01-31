@@ -1,0 +1,21 @@
+// Font family Parisienne
+@font-face {
+  font-family:Parisienne;
+  font-style:normal;
+  font-weight:400;
+  src:font-url("Parisienne-Regular.eot");
+  src:font-url("Parisienne-Regular.eot?#iefix") format("embedded-opentype"),font-url("Parisienne-Regular.woff") format("woff"),font-url("Parisienne-Regular.ttf") format("truetype")
+}
+.app-custom-font-name {
+  font-family:Parisienne!important;
+  font-size:52px!important;
+  line-height:1.1em!important
+}
+.app-custom-font-name.app-custom-font-name-secondary {
+  font-size:1em!important
+}
+@media screen and (max-width:48em) {
+  .app-custom-font-name {
+    font-size:39px!important
+  }
+}

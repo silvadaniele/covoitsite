@@ -12,7 +12,20 @@
  */
 @import "bootstrap";
 
+// Importing the general templates of our wedding website
+@import url("https://cdn1.mariages.net/build/css/themes/classic/general.min.css?v=11");
+@import url("https://cdn1.mariages.net/css/css-nossl-20190107-04FR42-1-base.css");
+@import url("https://cdn1.mariages.net/css/css-nossl-20180627-05FR42-1-baselib.css");
+@import url("https://cdn1.mariages.net/css/css-nossl-20190107-04FR42-1-wedsites,migrate/migrate.css");
+
+// Importing the fonts of our wedding website
+@import "fonts/index";
+
+// Importing the chosen template of our website
+@import "templates/wedding";
+
+// Custom CSS
 .container-margin-top {
   margin-top: 100px;
-  background-color: yellow;
+  // background-color: yellow;
 }

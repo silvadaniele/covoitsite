@@ -1,0 +1,41 @@
+// Font family Lora
+@font-face {
+  font-family:Lora;
+  font-style:normal;
+  font-weight:400;
+  src:font-url("Lora-Regular.eot");
+  src:font-url("Lora-Regular.eot?#iefix") format("embedded-opentype"),font-url("Lora-Regular.woff") format("woff"),font-url("Lora-Regular.ttf") format("truetype")
+}
+@font-face {
+  font-family:Lora;
+  font-style:italic;
+  font-weight:400;
+  src:font-url("Lora-Italic.eot");
+  src:font-url("Lora-Italic.eot?#iefix") format("embedded-opentype"),font-url("Lora-Italic.woff") format("woff"),font-url("Lora-Italic.ttf") format("truetype")
+}
+@font-face {
+  font-family:Lora;
+  font-style:normal;
+  font-weight:600;
+  src:font-url("Lora-Bold.eot");
+  src:font-url("Lora-Bold.eot?#iefix") format("embedded-opentype"),font-url("Lora-Bold.woff") format("woff"),font-url("Lora-Bold.ttf") format("truetype")
+}
+@font-face {
+  font-family:Lora;
+  font-style:italic;
+  font-weight:600;
+  src:font-url("Lora-BoldItalic.eot");
+  src:font-url("Lora-BoldItalic.eot?#iefix") format("embedded-opentype"),font-url("Lora-BoldItalic.woff") format("woff"),font-url("Lora-BoldItalic.ttf") format("truetype")
+}
+.app-custom-font-title,.theme-post-title {
+  font-family:Lora!important;
+  font-size:24px!important;
+  font-weight:600
+}
+.app-custom-font-title-primary {
+  font-size:32px!important;
+  font-weight:600
+}
+.theme-header-circle span,.theme-header-circle strong,.theme-ribbon-counter span {
+  font-family:Lora!important
+}

@@ -1,0 +1,41 @@
+// Font family Josefin-sans
+@font-face {
+  font-family:'Josefin Sans';
+  font-style:normal;
+  font-weight:300;
+  src:font-url("JosefinSans-Light.eot");
+  src:font-url("JosefinSans-Light.eot?#iefix") format("embedded-opentype"),font-url("JosefinSans-Light.woff") format("woff"),font-url("JosefinSans-Light.ttf") format("truetype")
+}
+@font-face {
+  font-family:'Josefin Sans';
+  font-style:normal;
+  font-weight:400;
+  src:font-url("JosefinSans-Regular.eot");
+  src:font-url("JosefinSans-Regular.eot?#iefix") format("embedded-opentype"),font-url("JosefinSans-Regular.woff") format("woff"),font-url("JosefinSans-Regular.ttf") format("truetype")
+}
+@font-face {
+  font-family:'Josefin Sans';
+  font-style:normal;
+  font-weight:600;
+  src:font-url("JosefinSans-Bold.eot");
+  src:font-url("JosefinSans-Bold.eot?#iefix") format("embedded-opentype"),font-url("JosefinSans-Bold.woff") format("woff"),font-url("JosefinSans-Bold.ttf") format("truetype")
+}
+
+.theme-post,.theme-post b,.theme-post em,.theme-post li:not(.theme-wedshoots-item-container),.theme-post p,.theme-post strong,.theme-post-entry,.theme-post-entry b,.theme-post-entry em,.theme-post-entry li,.theme-post-entry p,.theme-post-entry span,.theme-post-entry strong,.theme-post-text,.theme-post-text b,.theme-post-text em,.theme-post-text li,.theme-post-text p,.theme-post-text span,.theme-post-text strong {
+  font-family:"Josefin Sans"!important;
+  font-size:18px;
+  line-height:26px
+}
+.theme-post-entry small,.websites-adress,.websites-adress b{
+  font-size:.9em
+}
+.theme-list-details b,.theme-wedshoots-details p{
+  font-size:14px
+}
+.theme-header-circle,.theme-header-date,.theme-header-ribbon,.theme-ribbon .theme-ribbon-date,.theme-ribbon .theme-ribbon-title{
+  font-family:"Josefin Sans"!important;
+  font-size:18px
+}
+.theme-font-paragraph,.theme-ribbon-counter,label{
+  font-family:"Josefin Sans"!important
+}

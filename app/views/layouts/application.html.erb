@@ -9,19 +9,60 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render 'layouts/navbar' %>
-    <% if notice.present? %>
-      <div class="alert alert-success text-center" role="alert">
-        <span><%= notice %></span>
+    <div id="app-offset-pusher" class="theme">
+      <div id="app-content-load" class="app-contrast-color light-color">
+        <div class="premium-verifying-layer app-website-limit-reached-layer"></div>
+        <div id="app-nav-mobile-pointer" class="relative">
+          <a id="menutoggle" class="app-nav-mobile" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+
+          <div class="theme-wrapper">
+            <div class="relative app-spinner-container">
+              <div class="app-spinner-container-fadeto theme-header app-theme-background drag-image-fixed">
+                <p class="theme-header-decoration">
+                  <span class="app-contrast-color theme-header-ribbon theme-header-custom-title">Carpooling</span>
+                  <span class="app-contrast-color app-custom-font-name theme-header-custom-name light-color">Daniele e Emmanuel</span>
+                  <small class="app-contrast-color theme-header-custom-title light-color">Covoiturage | Carpooling</small>
+                  <% if @rides.present? %>
+                    <span class="app-contrast-color theme-header-circle theme-header-custom-title">
+                      <strong class="app-contrast-color theme-header-custom-title">
+                        <%= @rides.count %>
+                      </strong>
+                      trajet(s)
+                    </span>
+                  <% end %>
+                  </p>
+                </div>
+              </div>
+
+              <%= render 'layouts/navbar' %>
+
+              <div class="wrapper app-website-page-content" id="scrollMobile">
+                <div class="pure-u-1 websites-section">
+                  <ul class="" data-idpage="5764251">
+                    <li>
+                      <div class="theme-post app-website-render" data-id="784863" data-idpage="5764251">
+                        <div class="text-center">
+                          <h1 class="app-custom-font-title-primary theme-post-title">
+                            <%= content_for(:page_title) || "Nós vamos casar !" %>
+                          </h1>
+                        </div>
+                        <div class="theme-post">
+                          <%= yield %>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    <% end %>
-    <% if alert.present? %>
-      <div class="alert alert-danger text-center" role="alert">
-        <span><%= alert %></span>
-      </div>
-    <% end %>
-    <div class="container container-margin-top">
-      <%= yield %>
     </div>
   </body>
 </html>
