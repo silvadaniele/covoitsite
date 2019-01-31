@@ -1,53 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Covoitesite</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="website-menu-top app-nav-mobile-container">
+  <nav class="websites-menu">
+    <p class="app-contrast-color app-nav-mobile websites-menu-closeBar">
+      <span class="fa fa-times"></span>
+      Menu
+    </p>
+    <div class="theme-menu-wrapper">
+      <ul class="app-contrast-color theme-menu">
+        <li class="theme-menu-item app-menu-admin active app-contrast-color" data-id="5764251" data-orden="0">
+          <div class="app-menu-container">
+            <a class="active" href="https://www.mariages.net/web/danietmanu/bienvenuebemvindo-1">Retour au site</a>
+          </div>
+        </li>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to root_path, class: "nav-link" do %>
-          Home <span class="sr-only">(current)</span>
-        <% end %>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Maps</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Rides
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Create a Ride", new_ride_path, class: "dropdown-item" %>
-          <a class="dropdown-item" href="#">Find a Ride</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#"></a>
-        </div>
-      </li>
-
-       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSession" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          My Account
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownSession">
-          <% if user_signed_in? %>
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          <% else %>
-            <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %>
-          <% end %>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#"></a>
-        </div>
-      </li>
-
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-
-
+        <li class="theme-menu-item app-menu-admin ">
+          <div class="app-menu-container">
+            <% if user_signed_in? %>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Sign in", new_user_session_path %>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

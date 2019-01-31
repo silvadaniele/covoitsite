@@ -30,4 +30,5 @@
   <%= number_to_currency(@ride.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %>
 </p>
 
+<%= link_to 'Edit', edit_ride_path(@ride) %> |
 <%= link_to 'Back', rides_path %>
