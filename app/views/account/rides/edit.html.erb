@@ -1,6 +1,10 @@
-<h1>Editing Ride</h1>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1><%= t('.title') %></h1>
 
-<%= render 'form', ride: @ride %>
+    <%= render 'form', ride: @ride, url: account_ride_path(@ride) %>
 
-<%= link_to 'Show', @ride %> |
-<%= link_to 'Back', rides_path %>
+    <%= link_to t('rides.index.show'), @ride %> |
+    <%= link_to t('defaults.back'), rides_path %>
+  </div>
+</div>
