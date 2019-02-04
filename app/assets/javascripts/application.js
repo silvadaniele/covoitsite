@@ -17,10 +17,31 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require datetimepicker
 
+$(document).on('ready turbolinks:load', ready);
 
-$(document).ready(function(){
+function ready() {
+  initializeBootstrapDependencies();
+  initializeDateTimePicker();
+  setCurrentLinkMenuSelectorToActive();
+}
+
+function initializeBootstrapDependencies() {
   $('[data-toggle=tooltip]').tooltip();
   $('[data-toggle=popover]').popover();
   $('[data-toggle=popover-with-html]').popover({html: true});
-});
+}
+
+function initializeDateTimePicker() {
+  $.datetimepicker.setLocale('fr');
+  $('.datetimepicker').datetimepicker({
+    format:'d/m/Y H:i'
+  });
+};
+
+function setCurrentLinkMenuSelectorToActive() {
+  let currentActiveLinkMenuSelector = $('a[href="' + window.location.pathname + '"]');
+  currentActiveLinkMenuSelector.addClass('active');
+  currentActiveLinkMenuSelector.closest('.theme-menu-item').addClass('active');
+}

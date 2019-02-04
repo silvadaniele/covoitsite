@@ -28,8 +28,8 @@ class Account::RidesController < ApplicationController
 
     respond_to do |format|
       if @ride.save
-        format.html { redirect_to @ride, notice: 'Ride was successfully created.' }
-        format.json { render :show, status: :created, location: @ride }
+        format.html { redirect_to account_ride_path(@ride), notice: 'Ride was successfully created.' }
+        format.json { render :show, status: :created, location: account_ride_path(@ride) }
       else
         format.html { render :new }
         format.json { render json: @ride.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class Account::RidesController < ApplicationController
   def update
     respond_to do |format|
       if @ride.update(ride_params)
-        format.html { redirect_to @ride, notice: 'Ride was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ride }
+        format.html { redirect_to account_ride_path(@ride), notice: 'Ride was successfully updated.' }
+        format.json { render :show, status: :ok, location: account_ride_path(@ride) }
       else
         format.html { render :edit }
         format.json { render json: @ride.errors, status: :unprocessable_entity }

@@ -1,0 +1,43 @@
+fr:
+  defaults:
+    show: Voir
+    new: Nouveau %{resource}
+    edit: Modifier
+    destroy: Supprimer
+    back: Retour
+  activerecord:
+    models:
+      ride:
+        one: Trajet
+        other: Trajets
+    attributes:
+      ride:
+        owner: Conducteur
+        origin: Départ
+        destination: Arrivée
+        departure_at: Heure de départ
+        capacity: Capacité
+        price: Tarif
+  devise:
+    shared:
+      links:
+        sign_out: Déconnexion
+  layouts:
+    navbar:
+      all_rides: Tous les trajets
+      my_rides: Mes trajets
+      back_to_wedding_website: Retour au site de mariage
+  rides:
+    index:
+      show: Voir le trajet
+  account:
+    rides:
+      index:
+        rides_empty: "Vous n'avez renseigné aucun trajet."
+        add_ride: Cliquez ici pour ajouter un trajet
+      new:
+        title: Nouveau trajet
+      edit:
+        title: Modifier le trajet
+      form:
+        save: Enregistrer

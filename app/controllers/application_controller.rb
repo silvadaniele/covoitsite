@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :set_locale
   before_action :authenticate_user!
 
   unless Rails.application.config.consider_all_requests_local
@@ -20,5 +21,11 @@ class ApplicationController < ActionController::Base
       format.html { render 'errors/not_found', status: 404 }
       format.all { render nothing: true, status: 404 }
     end
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 end
