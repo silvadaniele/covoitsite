@@ -1,34 +1,34 @@
+<% content_for(:page_title) do %>
+  <%= Ride.model_name.human %> :
+  <%= @ride.origin %> -> <%= @ride.destination %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Owner:</strong>
-  <%= @ride.owner.email %>
-</p>
-
-<p>
-  <strong>Origin:</strong>
+  <strong><%= Ride.human_attribute_name(:origin) %> :</strong>
   <%= @ride.origin %>
 </p>
 
 <p>
-  <strong>Destination:</strong>
+  <strong><%= Ride.human_attribute_name(:destination) %> :</strong>
   <%= @ride.destination %>
 </p>
 
 <p>
-  <strong>Departure at:</strong>
-  <%= @ride.departure_at.strftime("%d-%m-%Y") %>
+  <strong><%= Ride.human_attribute_name(:departure_at) %> :</strong>
+  <%= @ride.departure_at.strftime("%d/%m/%Y - %H:%M") %>
 </p>
 
 <p>
-  <strong>Capacity:</strong>
+  <strong><%= Ride.human_attribute_name(:capacity) %> :</strong>
   <%= @ride.capacity %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%= Ride.human_attribute_name(:price) %> :</strong>
   <%= number_to_currency(@ride.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %>
 </p>
 
-<%= link_to 'Edit', edit_ride_path(@ride) %> |
-<%= link_to 'Back', rides_path %>
+<%= link_to t('defaults.edit'), edit_account_ride_path(@ride) %> |
+<%= link_to t('defaults.back'), account_rides_path %>

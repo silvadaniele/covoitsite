@@ -6,19 +6,33 @@
     </p>
     <div class="theme-menu-wrapper">
       <ul class="app-contrast-color theme-menu">
-        <li class="theme-menu-item app-menu-admin active app-contrast-color" data-id="5764251" data-orden="0">
+        <li class="theme-menu-item app-menu-admin">
           <div class="app-menu-container">
-            <a class="active" href="https://www.mariages.net/web/danietmanu/bienvenuebemvindo-1">Retour au site</a>
+            <%= link_to t('.all_rides'), rides_path %>
           </div>
         </li>
 
-        <li class="theme-menu-item app-menu-admin ">
+        <% if user_signed_in? %>
+          <li class="theme-menu-item app-menu-admin">
+            <div class="app-menu-container">
+              <%= link_to t('.my_rides'), account_rides_path %>
+            </div>
+          </li>
+        <% end %>
+
+        <li class="theme-menu-item app-menu-admin">
           <div class="app-menu-container">
             <% if user_signed_in? %>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+              <%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %>
             <% else %>
-              <%= link_to "Sign in", new_user_session_path %>
+              <%= link_to t('devise.shared.links.sign_in'), new_user_session_path %>
             <% end %>
+          </div>
+        </li>
+
+        <li class="theme-menu-item app-menu-admin app-contrast-color" data-id="5764251" data-orden="0">
+          <div class="app-menu-container">
+            <%= link_to t('.back_to_wedding_website'), "https://www.mariages.net/web/danietmanu/bienvenuebemvindo-1" %>
           </div>
         </li>
       </ul>

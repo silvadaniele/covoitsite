@@ -1,4 +1,4 @@
-<%= form_with(model: ride, local: true) do |form| %>
+<%= form_with(model: ride, local: true, url: url) do |form| %>
   <% if ride.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(ride.errors.count, "error") %> prohibited this ride from being saved:</h2>
@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <%= form.label :departure_at %>
-    <%= form.datetime_select :departure_at, required: true, class: "form-control" %>
+    <%= form.text_field :departure_at, required: true, class: "form-control datetimepicker" %>
   </div>
 
   <div class="form-group">
@@ -37,6 +37,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Create Ride", class: "btn btn-outline-primary" %>
+    <%= form.submit t('.save'), class: "btn btn-outline-primary" %>
   </div>
 <% end %>

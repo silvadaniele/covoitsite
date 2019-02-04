@@ -1,39 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rides</h1>
+<h1><%= Ride.model_name.human(count: @rides.count) %></h1>
+
+<br />
 
 <table class="table">
   <thead>
     <tr>
-      <th>Owner</th>
-      <th>Origin</th>
-      <th>Destination</th>
-      <th>Departure at</th>
-      <th>Capacity</th>
-      <th>Price</th>
+      <th><%= Ride.human_attribute_name(:origin) %></th>
+      <th><%= Ride.human_attribute_name(:destination) %></th>
+      <th><%= Ride.human_attribute_name(:departure_at) %></th>
+      <th><%= Ride.human_attribute_name(:capacity) %></th>
+      <th><%= Ride.human_attribute_name(:price) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <div class="container">
     <tbody>
-      <% @rides.each do |ride| %>
+      <% if @rides.empty? %>
         <tr>
-          <td><%= ride.owner.email %></td>
-          <td><%= ride.origin %></td>
-          <td><%= ride.destination %></td>
-          <td><%= ride.departure_at.strftime("%d-%m-%Y") %></td>
-          <td><%= ride.capacity %></td>
-          <td><%= number_to_currency(ride.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></td>
-          <td><%= link_to 'Show', ride %></td>
-          <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
-          <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td colspan="9" class="text-center">
+            <%= t('.rides_empty') %>
+            <%= link_to t('.add_ride'), new_account_ride_path %>
+          </td>
         </tr>
+      <% else %>
+        <% @rides.each do |ride| %>
+          <tr>
+            <td><%= ride.origin %></td>
+            <td><%= ride.destination %></td>
+            <td><%= ride.departure_at.strftime("%d-%m-%Y") %></td>
+            <td><%= ride.capacity %></td>
+            <td><%= number_to_currency(ride.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %></td>
+            <td><%= link_to t('defaults.show'), account_ride_path(ride) %></td>
+            <td><%= link_to t('defaults.edit'), edit_account_ride_path(ride) %></td>
+            <td><%= link_to t('defaults.destroy'), account_ride_path(ride), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </div>
 </table>
 
-<br>
+<br />
 
-<%= link_to 'New Ride', new_ride_path %>
+<% if @rides.any? %>
+  <%= link_to t('defaults.new', resource: Ride.model_name.human.downcase), new_account_ride_path %>
+<% end %>
