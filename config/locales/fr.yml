@@ -11,6 +11,10 @@ fr:
         one: Trajet
         other: Trajets
     attributes:
+      user:
+        first_name: Prénom
+        last_name: Nom
+        phone_number: Téléphone portable
       ride:
         owner: Conducteur
         origin: Départ

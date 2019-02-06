@@ -15,4 +15,11 @@
 
 class Ride < ApplicationRecord
   belongs_to :owner, class_name: 'User'
+
+  validates :origin, :destination, :departure_at, :capacity, :price, presence: true
+
+  validates :price, numericality: { greater_than_or_equal_to: 0 }
+
+  validates :capacity, numericality: { greater_than_or_equal_to: 1, only_integer: true }
+
 end

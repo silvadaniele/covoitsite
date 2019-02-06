@@ -27,10 +27,13 @@ class User < ApplicationRecord
 
   has_many :rides, foreign_key: :owner_id
 
+  validates :first_name, :last_name, :phone_number, :email, presence: true
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.name = auth.info.name
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
       user.password = Devise.friendly_token[0,20]
       user.avatar = auth.info.image
     end

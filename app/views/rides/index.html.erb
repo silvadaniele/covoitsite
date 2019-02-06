@@ -25,7 +25,7 @@
     <tbody>
       <% @rides.each do |ride| %>
         <tr>
-          <td><%= ride.owner.email %></td>
+          <td><%= ride.owner.first_name %> <%= ride.owner.last_name %></td>
           <td><%= ride.origin %></td>
           <td><%= ride.destination %></td>
           <td><%= ride.departure_at.strftime("%d/%m/%Y - %H:%M") %></td>
