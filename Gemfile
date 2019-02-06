@@ -42,6 +42,7 @@ gem 'omniauth-facebook'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'figaro'
+gem 'rails-i18n', '~> 5.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'

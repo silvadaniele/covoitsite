@@ -7,7 +7,8 @@
 
 <p>
   <strong><%= Ride.human_attribute_name(:owner) %> :</strong>
-  <%= @ride.owner.email %>
+  <%= @ride.owner.first_name %>
+  <%= @ride.owner.last_name %>
 </p>
 
 <p>

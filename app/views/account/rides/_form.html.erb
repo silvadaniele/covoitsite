@@ -28,12 +28,12 @@
 
   <div class="form-group">
     <%= form.label :capacity %>
-    <%= form.text_field :capacity, required: true, class: "form-control" %>
+    <%= form.number_field :capacity, required: true, class: "form-control", min: 1 %>
   </div>
 
   <div class="form-group">
     <%= form.label :price %>
-    <%= form.number_field :price, required: true, class: "form-control" %>
+    <%= form.number_field :price, required: true, class: "form-control", min: 0 %>
   </div>
 
   <div class="actions">
