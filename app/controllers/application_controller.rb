@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def render_500(exception)
+    Rollbar.error(exception)
+
     respond_to do |format|
       format.html { render 'errors/exception', status: 500 }
       format.all { render nothing: true, status: 500 }
