@@ -36,4 +36,12 @@
   <%= number_to_currency(@ride.price, unit: "€", separator: ",", delimiter: ".", format: "%n %u") %>
 </p>
 
+<br/>
+
+<%= link_to "Send a Message to #{@ride.owner.first_name}", contact_ride_path(@ride.id), class: "btn btn-call-to-action" %>
+
+<br />
+
+<!-- replace the hash by something with path in the end -->
+
 <%= link_to t('defaults.back'), rides_path %>

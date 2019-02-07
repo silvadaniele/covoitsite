@@ -1,0 +1,2 @@
+module Rides::RequestsHelper
+end
