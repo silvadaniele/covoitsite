@@ -4,7 +4,16 @@ Rails.application.routes.draw do
     registrations: "user/registrations",
     omniauth_callbacks: "callbacks"
   }
-  resources :rides, only: [:index, :show]
+  resources :rides, only: [:index, :show] do
+    member do
+      get :contact
+    end
+  end
+  scope module: :rides do
+    resources :rides, only: [] do
+      resources :requests, only: [:index, :show, :create]
+    end
+  end
   namespace :account do
     resources :rides
   end

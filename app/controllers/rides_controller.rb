@@ -1,6 +1,6 @@
 class RidesController < ApplicationController
-  skip_before_action :authenticate_user!
-  before_action :set_ride, only: [:show]
+  skip_before_action :authenticate_user!, except: [:contact]
+  before_action :set_ride, only: [:show, :contact]
 
   # GET /rides
   # GET /rides.json
@@ -11,6 +11,10 @@ class RidesController < ApplicationController
   # GET /rides/1
   # GET /rides/1.json
   def show
+  end
+
+  # GET /rides/1/contact
+  def contact
   end
 
   private

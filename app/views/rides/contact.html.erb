@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h2><%='Ride Request' %></h2>
+    <hr />
+    <%= form_for Request.new, url: ride_requests_path(ride_id: @ride.id) do |f| %>
+
+      <div class="form-group">
+        <%= f.label :number_of_passengers %><br />
+        <%= f.number_field :number_of_passengers, autofocus: true, required: true, min: 1, class: "form-control" %>
+      </div>
+
+       <div class="form-group">
+        <%= f.label :original_message %><br />
+        <%= f.text_area :original_message, required: true, pattern: ".{10,}", title: "10 caracters minimum", class: "form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Send', class: "btn btn-outline-primary" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

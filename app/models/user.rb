@@ -26,6 +26,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
 
   has_many :rides, foreign_key: :owner_id
+  has_many :requests, dependent: :nullify
 
   validates :first_name, :last_name, :phone_number, :email, presence: true
 
