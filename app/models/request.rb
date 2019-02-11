@@ -24,11 +24,8 @@ class Request < ApplicationRecord
   private
 
   def user_not_equal_to_ride_owner
-    if self.user_id == self.ride.owner_id
-      self.errors.add(:user_id, "Can not be the same than the ride owner.")
-    end
+    return unless self.user_id == self.ride.owner_id
+
+    self.errors.add(:user_id, "Can not be the same than the ride owner.")
   end
 end
-
-
-
