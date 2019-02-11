@@ -63,12 +63,12 @@ class Account::RidesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_ride
-      @ride = current_user.rides.find(params[:id])
-    end
+  def set_ride
+    @ride = current_user.rides.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def ride_params
-      params.require(:ride).permit(:owner_id, :origin, :destination, :departure_at, :capacity, :price)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def ride_params
+    params.require(:ride).permit(:owner_id, :origin, :destination, :departure_at, :capacity, :price)
+  end
 end

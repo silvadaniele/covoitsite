@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     member do
       get :contact
     end
-    resources :requests, only: [:index, :show, :create]
+  end
+  scope module: :rides do
+    resources :rides, only: [] do
+      resources :requests, only: [:index, :show, :create]
+    end
   end
   namespace :account do
     resources :rides
