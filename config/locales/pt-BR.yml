@@ -1,0 +1,83 @@
+pt-BR:
+  defaults:
+    show: Mostrar
+    new: Novo %{resource}
+    edit: Modificar
+    destroy: Deletar
+    back: Voltar
+    send: Enviar
+    from: de
+    to: para
+  activerecord:
+    errors:
+      models:
+        request:
+          attributes:
+            user_id:
+              cannot_be_the_same_than_the_ride_owner: passageiro e motorista precisam ser diferentes
+    models:
+      ride:
+        one: Viagem
+        other: Viagens
+      request:
+        one: Solicitação
+        other: Solicitações
+    attributes:
+      user:
+        first_name: Nome
+        last_name: Sobrenome
+        phone_number: Telefone móvel
+      ride:
+        owner: Motorista
+        origin: Partida
+        destination: Chegada
+        departure_at: Hora da partida
+        capacity: Capacidade
+        price: Tarifa
+      request:
+        user_id: "Usuário"
+        number_of_passengers: Número de passageiros
+        original_message: Mensagem
+  devise:
+    shared:
+      links:
+        sign_out: Sair
+  layouts:
+    navbar:
+      all_rides: Todas as Viagens
+      my_rides: Minhas viagens
+      back_to_wedding_website: Voltar para o site do casamento
+  rides:
+    index:
+      show: Visualizar a Viagem
+    show:
+      send_a_message: "Enviar uma mensagem para %{recipient}"
+    contact:
+      ride_request: "Solicitar vaga"
+    requests:
+      create:
+        success: Sua solicitação foi enviada
+        error: "Sua solicitação não pôde ser enviada : %{error}"
+  account:
+    rides:
+      index:
+        rides_empty: "Você não possui nenhuma viagem registrada."
+        add_ride: Clique aqui para adicionar uma viagem
+      new:
+        title: Nova viagem
+      edit:
+        title:
+      form:
+        save: Salvar
+  application_mailer:
+    new_request:
+      greetings: Olá %{name}
+      you_have_a_new_request_for: Você tem uma nova solicitação para
+      passenger:
+        one: passageiro
+        other: passageiros
+      about_your_ride: sobre a sua viagem
+      more_information: "Detalhes :"
+      if_you_want_to_answer: Caso queira responder, clique abaixo
+      answer_to: Responder %{name}
+      you_can_also_call: Você também pode ligar

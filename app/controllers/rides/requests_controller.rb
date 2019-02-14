@@ -7,9 +7,9 @@ class Rides::RequestsController < ApplicationController
 
     if @request.save
       ApplicationMailer.new_request(@request.id).deliver_now
-      redirect_to root_path, notice: "Your request was successfully sent!"
+      redirect_to root_path, notice: t(".success")
     else
-      redirect_to root_path, notice: "There was a problem! #{@request.errors.full_messages}"
+      redirect_to root_path, notice: t(".error", error: @request.errors.full_messages.join(", "))
     end
   end
 

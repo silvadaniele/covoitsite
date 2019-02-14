@@ -5,11 +5,23 @@ fr:
     edit: Modifier
     destroy: Supprimer
     back: Retour
+    send: Envoyer
+    from: de
+    to: à
   activerecord:
+    errors:
+      models:
+        request:
+          attributes:
+            user_id:
+              cannot_be_the_same_than_the_ride_owner: ne peut pas être la même personne que le conducteur
     models:
       ride:
         one: Trajet
         other: Trajets
+      request:
+        one: Demande
+        other: Demandes
     attributes:
       user:
         first_name: Prénom
@@ -22,6 +34,10 @@ fr:
         departure_at: Heure de départ
         capacity: Capacité
         price: Tarif
+      request:
+        user_id: "L'utilisateur"
+        number_of_passengers: Nombre de passagers
+        original_message: Message
   devise:
     shared:
       links:
@@ -34,6 +50,14 @@ fr:
   rides:
     index:
       show: Voir le trajet
+    show:
+      send_a_message: "Envoyer un message à %{recipient}"
+    contact:
+      ride_request: "Demander des places"
+    requests:
+      create:
+        success: Votre demande a été envoyée
+        error: "Votre demande n'a pas pu être envoyée : %{error}"
   account:
     rides:
       index:
@@ -45,3 +69,15 @@ fr:
         title: Modifier le trajet
       form:
         save: Enregistrer
+  application_mailer:
+    new_request:
+      greetings: Bonjour %{name}
+      you_have_a_new_request_for: Vous avez une nouvelle demande pour
+      passenger:
+        one: passager
+        other: passagers
+      about_your_ride: concernant votre trajet
+      more_information: "Dètails :"
+      if_you_want_to_answer: Si vous voulez répondre, cliquez ci-dessous
+      answer_to: Répondre à %{name}
+      you_can_also_call: Vous pouvez aussi appeler
