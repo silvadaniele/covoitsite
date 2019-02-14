@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
-    <h2><%='Ride Request' %></h2>
+    <h2><%= t(".ride_request") %></h2>
     <hr />
     <%= form_for Request.new, url: ride_requests_path(ride_id: @ride.id) do |f| %>
 
@@ -15,7 +15,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit 'Send', class: "btn btn-outline-primary" %>
+        <%= f.submit t("defaults.send"), class: "btn btn-outline-primary" %>
       </div>
     <% end %>
 

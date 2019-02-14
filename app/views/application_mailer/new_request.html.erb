@@ -1,18 +1,18 @@
-<p>Hi <%= @owner.first_name %>,</p>
+<p><%= t(".greetings", name: @owner.first_name) %>,</p>
 
-<p>you have a new request for <strong><%= @request.number_of_passengers %></strong>
-passenger(s), from <strong><%= @user.first_name %> <%= @user.last_name %></strong> about your ride from <u><%= @ride.origin %></u> to <u><%= @ride.destination%></u></p>
+<p><%= t(".you_have_a_new_request_for") %> <strong><%= @request.number_of_passengers %></strong>
+<%= t(".passenger", count: @request.number_of_passengers) %>, <%= t("defaults.from") %> <strong><%= @user.first_name %> <%= @user.last_name %></strong> <%= t(".about_your_ride") %> <%= t("defaults.from") %> <u><%= @ride.origin %></u> <%= t("defaults.to") %> <u><%= @ride.destination%></u></p>
 
-<p>Some more information about it:</p>
+<p><%= t(".more_information") %></p>
 
 <ul>
-  <li>Number of Passengers: <%= @request.number_of_passengers %></li>
-  <li>Message: <em><%= @request.original_message %></em></li>
+  <li><%= Request.human_attribute_name(:number_of_passengers) %> : <%= @request.number_of_passengers %></li>
+  <li><%= Request.human_attribute_name(:original_message) %> : <em><%= @request.original_message %></em></li>
 </ul>
 <br/>
 
-<p>If you want to answer, click below:</p>
+<p><%= t(".if_you_want_to_answer") %></p>
 
-<%= mail_to @user.email, "Answer to #{@user.first_name}", class: "btn btn-call-to-action" %>
+<%= mail_to @user.email, t(".answer_to", name: @user.first_name), class: "btn btn-call-to-action" %>
 
-<p>You can also call <%= @user.first_name %>: <%= @user.phone_number %></p>
+<p><%= t(".you_can_also_call") %> <%= @user.first_name %> : <%= @user.phone_number %></p>
