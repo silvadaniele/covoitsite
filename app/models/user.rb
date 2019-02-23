@@ -28,9 +28,5 @@ class User < ApplicationRecord
   has_many :rides, foreign_key: :owner_id
   has_many :requests, dependent: :nullify
 
-  validates :first_name, :last_name, :email, presence: true
-  validates :phone_number, presence: true, unless: :skip_phone_number_validation
-
-  attr_accessor :skip_phone_number_validation
+  validates :first_name, :last_name, :email, :phone_number, presence: true
 end
-

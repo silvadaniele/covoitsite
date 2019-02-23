@@ -8,10 +8,9 @@ class CallbacksController < Devise::OmniauthCallbacksController
       user.phone_number = auth.info.phone_number
       user.password = Devise.friendly_token[0,20]
       user.avatar = auth.info.image
-      user.skip_phone_number_validation = true
     end
 
-    if @user.save
+    if @user.save(validate: false)
       sign_in_and_redirect @user, event: :authentication
     else
       redirect_to new_user_registration_url
