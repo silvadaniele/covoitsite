@@ -16,7 +16,7 @@ class Account::ValidationsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:phone_number)
+    params.require(:user).permit(*current_user.errors.keys)
   end
 
   def redirect_to_valid_user
