@@ -3,6 +3,7 @@ pt-BR:
     show: Mostrar
     new: Novo %{resource}
     edit: Modificar
+    update: Atualizar
     destroy: Deletar
     back: Voltar
     send: Enviar
@@ -69,6 +70,12 @@ pt-BR:
         title:
       form:
         save: Salvar
+    validations:
+      edit:
+        complete_your_profile: Complete seu perfil
+        explanation: "Nós precisamos de informações complementares para finalizar o seu cadastro :"
+      update:
+        success: "Perfil válido. Obrigado!"
   application_mailer:
     new_request:
       greetings: Olá %{name}

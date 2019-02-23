@@ -5,6 +5,8 @@
 $call-to-action-color: #c4b2a4;
 
 .btn-call-to-action {
+  border-color: $call-to-action-color;
+  color: $call-to-action-color;
   font-size: large;
   border: 1px solid;
   display: block;

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   namespace :account do
+    resource :validation, only: [:edit, :update]
     resources :rides
   end
 

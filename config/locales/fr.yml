@@ -3,6 +3,7 @@ fr:
     show: Voir
     new: Nouveau %{resource}
     edit: Modifier
+    update: Mettre à jour
     destroy: Supprimer
     back: Retour
     send: Envoyer
@@ -69,6 +70,12 @@ fr:
         title: Modifier le trajet
       form:
         save: Enregistrer
+    validations:
+      edit:
+        complete_your_profile: Complétez votre profil
+        explanation: "Nous avons besoin de quelques informations complémentaires pour finaliser votre inscription :"
+      update:
+        success: "Profil validé. Merci !"
   application_mailer:
     new_request:
       greetings: Bonjour %{name}

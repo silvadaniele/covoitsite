@@ -21,5 +21,4 @@ class Ride < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 0 }
 
   validates :capacity, numericality: { greater_than_or_equal_to: 1, only_integer: true }
-
 end
