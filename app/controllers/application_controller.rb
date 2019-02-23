@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   def validate_complete_user!
     if current_user.invalid?
-      redirect_to edit_account_validation_path, flash: { alert: "Veuillez compléter votre profil : #{current_user.errors.full_messages.join(', ')}" }
+      redirect_to edit_account_validation_path, flash: { alert: current_user.errors.full_messages.join(', ') }
     end
   end
 

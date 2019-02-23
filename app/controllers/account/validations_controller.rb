@@ -6,7 +6,7 @@ class Account::ValidationsController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      flash[:notice] = "Profil validé. Merci !"
+      flash[:notice] = t('.success')
       sign_in_and_redirect current_user
     else
       render :edit

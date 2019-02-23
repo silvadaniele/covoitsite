@@ -74,6 +74,8 @@ pt-BR:
       edit:
         complete_your_profile: Complete seu perfil
         explanation: "Nós precisamos de informações complementares para finalizar o seu cadastro :"
+      update:
+        success: "Perfil válido. Obrigado!"
   application_mailer:
     new_request:
       greetings: Olá %{name}
