@@ -1,6 +1,4 @@
 class CallbacksController < Devise::OmniauthCallbacksController
-  helper :resource
-  helper :resource_name
   def facebook
     auth = request.env["omniauth.auth"]
     @user = User.where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
