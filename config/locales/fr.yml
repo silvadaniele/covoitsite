@@ -3,6 +3,7 @@ fr:
     show: Voir
     new: Nouveau %{resource}
     edit: Modifier
+    update: Mettre à jour
     destroy: Supprimer
     back: Retour
     send: Envoyer

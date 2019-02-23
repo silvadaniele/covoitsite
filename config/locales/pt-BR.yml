@@ -3,6 +3,7 @@ pt-BR:
     show: Mostrar
     new: Novo %{resource}
     edit: Modificar
+    update: Update
     destroy: Deletar
     back: Voltar
     send: Enviar
