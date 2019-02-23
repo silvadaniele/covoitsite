@@ -70,6 +70,10 @@ fr:
         title: Modifier le trajet
       form:
         save: Enregistrer
+    validations:
+      edit:
+        complete_your_profile: Complétez votre profil
+        explanation: "Nous avons besoin de quelques informations complémentaires pour finaliser votre inscription :"
   application_mailer:
     new_request:
       greetings: Bonjour %{name}
