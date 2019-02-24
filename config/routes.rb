@@ -21,4 +21,7 @@ Rails.application.routes.draw do
 
   root 'rides#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+  get '/mentions-legales', to: 'pages#legal_mentions'
 end
