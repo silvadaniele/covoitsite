@@ -35,6 +35,27 @@
             <%= link_to t('.back_to_wedding_website'), "https://www.mariages.net/web/danietmanu/bienvenuebemvindo-1" %>
           </div>
         </li>
+        <li class="theme-menu-item app-menu-admin app-contrast-color">
+          <div class="app-menu-container">
+            <div class="dropdown show">
+              <% if I18n.locale == I18n.default_locale %>
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Français
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <%= link_to "Português", { locale: 'pt-BR' }, class: "dropdown-item" %>
+                </div>
+              <% else %>
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Português
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <%= link_to "Français", { locale: 'fr' }, class: "dropdown-item" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
