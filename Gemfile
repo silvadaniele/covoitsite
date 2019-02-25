@@ -39,7 +39,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'bootstrap', '~> 4.1.3'
+gem "bootstrap", ">= 4.3.1"
 gem 'jquery-rails'
 gem 'figaro'
 gem 'rails-i18n', '~> 5.1'
