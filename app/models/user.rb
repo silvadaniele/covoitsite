@@ -28,5 +28,7 @@ class User < ApplicationRecord
   has_many :rides, foreign_key: :owner_id
   has_many :requests, dependent: :nullify
 
-  validates :first_name, :last_name, :email, :phone_number, presence: true
+  validates :first_name, length: { minimum: 2 }, presence: true
+  validates :last_name, length: { minimum: 2 }, presence: true
+  validates :email, :phone_number, presence: true
 end
