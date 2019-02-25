@@ -1,5 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'do_not_answer@dani-and-manu.info'
   layout 'mailer'
 
   def new_request(request_id)
