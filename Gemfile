@@ -44,6 +44,7 @@ gem 'jquery-rails'
 gem 'figaro'
 gem 'rails-i18n', '~> 5.1'
 gem 'rollbar'
+gem 'phonelib'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'

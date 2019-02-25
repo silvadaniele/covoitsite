@@ -16,6 +16,10 @@ pt-BR:
           attributes:
             user_id:
               cannot_be_the_same_than_the_ride_owner: passageiro e motorista precisam ser diferentes
+        user:
+          attributes:
+            phone_number:
+              invalid_format: não é um número de telefone válido
     models:
       ride:
         one: Viagem

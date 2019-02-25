@@ -16,6 +16,10 @@ fr:
           attributes:
             user_id:
               cannot_be_the_same_than_the_ride_owner: ne peut pas être la même personne que le conducteur
+        user:
+          attributes:
+            phone_number:
+              invalid_format: n'est pas un numéro valide
     models:
       ride:
         one: Trajet

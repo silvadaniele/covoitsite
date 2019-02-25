@@ -31,4 +31,14 @@ class User < ApplicationRecord
   validates :first_name, length: { minimum: 2 }, presence: true
   validates :last_name, length: { minimum: 2 }, presence: true
   validates :email, :phone_number, presence: true
+  validate :phone_number_has_valid_format
+
+  private
+
+  def phone_number_has_valid_format
+    return if Phonelib.valid_for_country?(self.phone_number, 'FR')
+    return if Phonelib.valid_for_country?(self.phone_number, 'BR')
+
+    self.errors.add(:phone_number, :invalid_format)
+  end
 end
