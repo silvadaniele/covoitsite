@@ -9,7 +9,7 @@ class Rides::RequestsController < ApplicationController
       ApplicationMailer.new_request(@request.id).deliver_now
       redirect_to root_path, notice: t(".success")
     else
-      redirect_to root_path, notice: t(".error", error: @request.errors.full_messages.join(", "))
+      redirect_to root_path, alert: t(".error", error: @request.errors.full_messages.join(", "))
     end
   end
 
