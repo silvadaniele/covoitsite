@@ -21,4 +21,13 @@ class Ride < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 0 }
 
   validates :capacity, numericality: { greater_than_or_equal_to: 1, only_integer: true }
+
+  validate :departure_at_cannot_be_in_the_past, on: :create
+  validate :departure_at_cannot_be_in_the_past, on: :update, if: :departure_at_changed?
+
+  def departure_at_cannot_be_in_the_past
+    if departure_at.present? && departure_at < Time.now
+      errors.add(:departure_at, :cannot_be_in_the_past)
+    end
+  end
 end

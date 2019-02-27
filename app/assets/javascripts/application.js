@@ -36,7 +36,7 @@ function initializeBootstrapDependencies() {
 function initializeDateTimePicker() {
   $.datetimepicker.setLocale('fr');
   $('.datetimepicker').datetimepicker({
-    format:'d/m/Y H:i'
+    format: 'd/m/Y H:i'
   });
 };
 

@@ -20,6 +20,10 @@ pt-BR:
           attributes:
             phone_number:
               invalid_format: não é um número de telefone válido
+        ride:
+          attributes:
+            departure_at:
+              cannot_be_in_the_past: não pode ser no passado
     models:
       ride:
         one: Viagem
