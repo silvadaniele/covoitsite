@@ -169,7 +169,8 @@ GEM
     phonelib (0.6.29)
     popper_js (1.14.5)
     public_suffix (3.0.3)
-    puma (3.12.4)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -325,7 +326,7 @@ DEPENDENCIES
   omniauth-facebook
   pg
   phonelib
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 5.2.2)
   rails-assets-datetimepicker!
   rails-controller-testing
